@@ -1,22 +1,17 @@
-"""
-Pursuit Helloworld
-
-This exercise is copied from https://github.com/SmallLion/Python-Projects/blob/main/word_game
-"""
 import random
 
 
-lives = 100
+HP = 100
 
-words = ['pizza', 'fairy', 'teeth', 'sword', 'otter', 'plane', 'train', 'super']
+action = ['block', 'shoot',]
 
-secret_word = random.choice(words)
+secret_word = random.choice(action)
 
-clue = list('?????')
-airplane_symbol = u'\2708'
+clue = list('??')
+
+airplane_symbol = u'/u2708'
 
 guessed_word_correctly = False
-
 
 def update_clue(guessed_letter, secret_word, clue):
     """This method will update the clue if the guess exists in the secret word"""
@@ -30,7 +25,7 @@ def update_clue(guessed_letter, secret_word, clue):
 # A while clause will continue executing until the condition is true.
 while lives > 0:
     print(clue)
-    print('Lives left: ' + airplane_symbol * lives)
+    print('Lives left: ' + sword_symbol * lives)
     guess = input('Guess a letter or the whole word: ')
 
     if guess == secret_word:
@@ -49,4 +44,5 @@ if guessed_word_correctly:
     print('You won! The secret word was ' + secret_word)
 else:
     print('You lost! The secret word was ' + secret_word)
+
 
